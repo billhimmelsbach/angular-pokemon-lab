@@ -1,0 +1,63 @@
+<head>
+  <meta charset="utf-8" ng-app="tunely">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>POKAAMAANZ: GOTTA CRUD 'EM ALL, POKAAMAANZ'</title>
+
+  <!-- STYLESHEETS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- VENDOR SCRIPTS -->
+  <!-- <script  src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
+
+  <!-- APPLICATION SCRIPTS -->
+  <script src="scripts/app.js"></script>
+
+</head>
+
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to tunely</h1>
+      <p>Your music binder!</p>
+    </div>
+  </div>
+
+  <div class="container" ng-controller="AlbumsIndexController as albumsIndexCtrl">
+    <form ng-submit="albumsIndexCtrl.createAlbum()">
+      <input type="text" ng-hide="editing" class="form-control" placeholder="New album name" ng-model="albumsIndexCtrl.newAlbum.name">
+      <input type="text" ng-hide="editing" class="form-control" placeholder="New album artist" ng-model="albumsIndexCtrl.newAlbum.artistName">
+      <button type="submit" name="button">Submit!</button>
+    </form>
+
+    <p><b>albumsIndexCtrl.newAlbum:</b> {{albumsIndexCtrl.newAlbum}}</p>
+
+
+    <label>Search:
+      <input ng-model="searchText">
+    </label>
+    <div ng-repeat="album in albumsIndexCtrl.albums | orderBy:'name' | filter:searchText">
+      <h1 ng-hide="editing">{{album.name}}</h1>
+      <input ng-show="editing" ng-model="album.name" type="text" class="form-control input-md">
+      <h2 ng-hide="editing">{{album.artistName}}<h2>
+      <input ng-show="editing" ng-model="album.artistName" type="text" class="form-control input-md">
+      <textarea name="name" rows="8" cols="40"></textarea>
+      <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Album</button>
+      <button class='btn btn-success' ng-show="editing" ng-click="albumsIndexCtrl.editAlbum(album); editing = false">Save Changes</button>
+      <button class='btn btn-danger' ng-click="albumsIndexCtrl.deleteAlbum(album)">Delete Album</button>
+      <br>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
