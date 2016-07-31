@@ -1,4 +1,65 @@
-/*.card {
-  width: 200px;
-  height: 200px;
+/*div {
+  background-color: blue;
 }*/
+
+.content {
+  margin-left: .5vh;
+}
+
+body {
+  height:100%;
+  width: 95%;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+body {
+  font-family: 'VT323';
+  margin:0;
+  padding:0;
+}
+
+ul {
+    list-style:none;
+    padding-left:0;
+}​
+
+.sideBar
+{
+  padding:3px;
+  height:600px;
+}
+
+.pokeList
+{
+  height:80vh;
+   overflow-y: auto;
+   overflow-x: hidden;
+   background-color: #dd0623;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+}
+
+.title, .pokeList {
+  background-color: #dd0623;
+}
+.pokeContainer {
+  width: 100%;
+  overflow-y: auto;
+  height: 80vh;
+  background-color: #dd0623;
+  margin:0;
+  font-size: 3vh;
+  padding: 0;
+}
