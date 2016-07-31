@@ -23,21 +23,39 @@
 
 </head>
   <body>
-    <br>
-    <div class="content">
+    <!-- <br> -->
+    <div class="content col-xs-10 offset-xs-2">
     <div class="row">
     <div class="col-xs-2 title">
         <h3>Pokedex</h1>
+          <div class="search">
+            <input type="text" class="form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
+          </div>
     </div>
     </div>
-    <div class ="row">
+    <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
               <div class="container pokeContainer" ng-controller="PokemonIndexController as pokemonIndexCtrl">
-                <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'name' | filter: searchText">
-                    <p class='inline-header'>{{poke.name}}</p>
+                <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
+                    <p class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
                 </div>
               </div>
       </div>
+      <div class="col-xs-9 pokePanel">
+        <br>
+        <div class="row">
+          <div class = "col-xs-12 offset-xs-2">
+          <p>test test</p>
+          <div class="container" ng-controller="PokemonIndexController as pokemonIndexCtrl">
+            <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'name' | filter: searchPokemon">
+                <p class='inline-header'>{{poke[0].name}}</p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        </div>
+      <div>
     </div>
   </div>
   </body>

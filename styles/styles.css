@@ -1,14 +1,26 @@
 /*div {
   background-color: blue;
 }*/
-
+/*div {
+  padding:0 !important;
+  margin:0 !important;
+}*/
 .content {
   /*margin-left: .5vh;*/
+}
+
+.pokePanel {
+  background-color: #dd0623;
+  height:80vh;
+  padding-left: 0;
 }
 
 body {
   height:100%;
   width: 95%;
+  padding-left: 0;
+  padding:0 !important;
+  margin:0 !important;
 }
 
 ::-webkit-scrollbar {
@@ -32,10 +44,21 @@ ul {
     padding-left:0;
 }​
 
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .sideBar
 {
-  padding:3px;
-  height:600px;
+  height:70vh;
 }
 
 .pokeList
