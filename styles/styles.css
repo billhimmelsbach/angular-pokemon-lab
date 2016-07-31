@@ -17,13 +17,23 @@
 
 body {
   height:100%;
-  width: 95%;
+  width: 100%;
   padding-left: 0;
   padding:0 !important;
   margin:0 !important;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: #000000;
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
 }
@@ -31,7 +41,7 @@ body {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
+}*/
 
 body {
   font-family: 'VT323';
