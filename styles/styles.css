@@ -72,7 +72,10 @@ ul {
 
 .sideBar
 {
-  height:70vh;
+  height:80vh;
+  background-color: #dd0623;
+  overflow-y: auto;
+
 }
 
 .pokeList
