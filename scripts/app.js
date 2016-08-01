@@ -1,8 +1,4 @@
-/* CLIENT-SIDE JS
- *
- * This is your main angular file. Edit as you see fit.
- *
- */
+
 //  window.onload = function() {
 //    console.log("test!");
 //    $('.pokeSide').on('click', function(){
@@ -45,10 +41,6 @@ PokemonIndexController.$inject = ['$http', '$scope'];
 function PokemonIndexController ($http, $scope) {
   var vm = this;
   vm.newPoke = {};
-  // vm.newPoke = {
-  //   name: '',
-  //   artistName: 'Morrissey'
-  // };
 
   $http({
     method: 'GET',

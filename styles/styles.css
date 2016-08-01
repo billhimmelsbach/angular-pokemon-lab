@@ -9,6 +9,10 @@
 .redBackground {
   background-color: #dd0623;
 }
+
+#savePokemonButton {
+  right:+50% !important;
+}
 .btn-lg {
   border-radius:0 !important;
   color: black;
@@ -43,6 +47,15 @@ body {display:table-cell; text-align:center; vertical-align:middle;}
 	border-bottom: 100px solid #dd0623;
 	border-right: 100px solid transparent;
 }*/
+
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
 
 #triangle-bottomleft {
 width: 0;
@@ -110,9 +123,9 @@ border-color: transparent transparent #ff0000 transparent;
 
 }
 
-/*.searchBar{
-
-}*/
+.searchBar{
+border: 0 !important;
+}
 
 body {
   height:100%;

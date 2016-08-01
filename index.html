@@ -66,18 +66,18 @@
                   <div class="form-group">
                     <label class="col-md-6 control-label">Image of Pokemon</label>
                     <div class="col-md-6">
-                    <input ng-model="pokemonIndexCtrl.newPoke.image" type="text" class="form-control input-md" placeholder="https://img.pokemondb.net/artwork/pikachu.jpg" required>
+                    <input ng-model="pokemonIndexCtrl.newPoke.image" type="url" class="form-control input-md" placeholder="https://img.pokemondb.net/artwork/pikachu.jpg" required>
                     </div>
                   </div>
             </div>
           </div>
           <div class="row">
-          <div class="form-group modal-footer col-md-8 col-xs-offset-2">
-            <div class="col-md-3 pull-right">
-              <button class="savePokemon btn btn-primary">Save Your Pokemon!</button>
+          <div class="form-group modal-footer col-md-11">
+            <!-- <div class="col-md-3"> -->
+              <button id="savePokemonButton" class="pull-right savePokemon btn btn-lg btn-success">Save Your Pokemon!</button>
             </fieldset>
           </form>
-            </div>
+            <!-- </div> -->
           </div>
           </div>
         </div>
@@ -109,9 +109,9 @@
             <div ng-repeat="poke in pokemonIndexCtrl.pokemon | filter: pokemonIndexCtrl.selectPokemon">
                 <div class = "pokeNameContainer col-xs-10 col-xs-offset-1">
                   <p class = "pokeNameText" ng-hide="editing">{{poke.pokedex}} {{poke.name}}</p>
-                  <input ng-show="editing" ng-model="poke.pokedex" type="text" class="form-control input-md">
+                  <input ng-show="editing" ng-model="poke.pokedex" type="text" class="form-control input-md" required>
                   <!-- <input ng-show="creating" ng-model="newPoke.pokedex" type="text" class="form-control input-md"> -->
-                  <input ng-show="editing" ng-model="poke.name" type="text" class="form-control input-md">
+                  <input ng-show="editing" ng-model="poke.name" type="text" class="form-control input-md" required>
                   <!-- <input ng-show="creating" ng-model="newPoke.name" type="text" class="form-control input-md"> -->
                 </div>
                 <br>
@@ -119,13 +119,13 @@
                   <div class = "col-xs-10 col-xs-offset-1 middleRowContainer">
                       <div class = "imgContainer col-xs-4">
                         <img class = "img-responsive center-block" src='{{poke.image}}'>
-                        <input ng-show="editing" ng-model="poke.image" type="text" class="form-control input-md">
+                        <input ng-show="editing" ng-model="poke.image" type="url" class="form-control input-md" required>
                         <!-- <input ng-show="creating" ng-model="newPoke.image" type="text" class="form-control input-md"> -->
                       </div>
                 <div class = "rightColumnMiddle col-xs-6 pull-right">
                   <div class = "pokeNameContainer pokeInfo">
                     <p class = "pokeNameText"> Evolves From: <br><span ng-hide="editing"> {{poke.evolves_from}}</span></p>
-                    <input ng-show="editing" ng-model="poke.evolves_from" type="text" class="form-control input-md">
+                    <input ng-show="editing" ng-model="poke.evolves_from" type="text" class="form-control input-md" required>
                     <!-- <input ng-show="creating" ng-model="newPoke.evolves_from" type="text" class="form-control input-md"> -->
                   </div>
                 </div>
