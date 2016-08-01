@@ -91,14 +91,15 @@
         <p>Pokedex</p>
       </div>
       </div>
-      <div class="row">
-          <div class="search col-xs-2">
+      <div class="row no-gutter searchContainer">
+        <div class="col-xs-3 searchBorder pull-left">
+          <div class="search col-xs-12 pull-left">
+            <div class="searchContainer col-xs-10 col-xs-offset-1">
             <input type="text" class="searchBar form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
+            </div>
           </div>
-          <div class="col-xs-2">
-            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Open Modal</button>
-          </div>
-          </div>
+        </div>
+      </div>
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
                 <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
@@ -128,18 +129,19 @@
                       </div>
                 <div class = "rightColumnMiddle col-xs-6 pull-right">
                   <div class = "pokeNameContainer pokeInfo">
-                    <p class = "pokeNameText"> Evolves From: <span ng-hide="editing"> {{poke.evolves_from}}</span></p>
+                    <p class = "pokeNameText"> Evolves From: <br><span ng-hide="editing"> {{poke.evolves_from}}</span></p>
                     <input ng-show="editing" ng-model="poke.evolves_from" type="text" class="form-control input-md">
                     <!-- <input ng-show="creating" ng-model="newPoke.evolves_from" type="text" class="form-control input-md"> -->
                   </div>
                 </div>
                 <div class="row">
-                  <div class ="col-xs-12">
-                  <button class='btn btn-info' ng-hide="creating" ng-click="creating = true">Create Pokemon!</button>
-                  <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Pokemon!</button>
-                  <button class='btn btn-success' ng-show="editing" ng-click="pokemonIndexCtrl.editPoke(poke); editing = false">Save Pokemon!</button>
-                  <button class='btn btn-success' ng-show="creating" ng-click="pokemonIndexCtrl.newPoke(poke); creating = false">Save Pokemon!</button>
-                  <button class='btn btn-danger' ng-click="pokemonIndexCtrl.deletePoke(poke)">Delete Pokemon!</button>
+                  <div class ="col-xs-12 buttonContainer">
+                  <!-- <button class='btn btn-info' ng-hide="creating" ng-click="creating = true">Create Pokemon!</button> -->
+                  <button class='btn btn-info btn-lg' ng-hide="editing" ng-click="editing = true">Edit Pokemon!</button>
+                  <button class='btn btn-success btn-lg' ng-show="editing" ng-click="pokemonIndexCtrl.editPoke(poke); editing = false">Save Pokemon!</button>
+                  <!-- <button class='btn btn-success' ng-show="creating" ng-click="pokemonIndexCtrl.newPoke(poke); creating = false">Save Pokemon!</button> -->
+                  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Make A New Pokemon!</button>
+                  <button class='btn btn-danger btn-lg' ng-click="pokemonIndexCtrl.deletePoke(poke)">Delete Pokemon!</button>
                   </div>
                 </div>
                 </div>
