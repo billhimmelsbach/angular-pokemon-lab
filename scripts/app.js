@@ -20,11 +20,11 @@ $(document).ready(function() {
      console.log("hey!");
      $(this).addClass('active');
   });
-  $('body').on('click', '.savePokemon', function(e){
-    console.log("test!");
-    $('#myModal').modal('toggle');
-    setTimeout(function(){ $('.newPokeForm').find("input[type=text], textarea").val(""); }, 3000);
- });
+ //  $('body').on('click', '.savePokemon', function(e){
+ //    console.log("test!");
+ //    $('#myModal').modal('toggle');
+ //    setTimeout(function(){ $('.newPokeForm').find("input[type=text], textarea").val(""); }, 3000);
+ // });
 });
 
 angular
@@ -84,6 +84,8 @@ function PokemonIndexController ($http, $scope) {
       data: vm.newPoke,
     }).then(function successCallback(response) {
       vm.pokemon.push(response.data);
+      $('#myModal').modal('toggle');
+      setTimeout(function(){ $('.newPokeForm').find("input[type=text], textarea").val(""); }, 3000);
     }, function errorCallback(response) {
       console.log('There was an error posting the data', response);
     });
