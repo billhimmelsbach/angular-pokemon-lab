@@ -6,12 +6,13 @@
 //      $(this).addClass('active');
 //   });
 var music1 = new Audio("sound/opening.mp3");
-var poke1 = new Audio("sound/bulbasaur.mp3");
-function pokeSound() {
+var bulbasaur = new Audio("sound/bulbasaur.mp3");
+var menu = new Audio("sound/menuShort.mp3");
+var charmander = new Audio("sound/charmander.mp3");
+var pikachu = new Audio("sound/pikachu.mp3");
+function pokeSound(sound) {
   console.log("Sounds!");
-  music1.pause();
-  poke1.play();
-  music1.play();
+  sound.play();
 }
 
 
@@ -19,6 +20,7 @@ $(document).ready(function() {
    console.log("test!");
    $('body').on('click', '.pokeSide', function(e){
      e.preventDefault();
+     pokeSound(menu);
      $('div').removeClass('active');
      $('div a').removeClass('active');
      console.log("hey!");
@@ -99,8 +101,8 @@ function PokemonIndexController ($http, $scope) {
     }).then(function successCallback(response) {
       vm.pokemon.push(response.data);
       $('#myModal').modal('toggle');
-      pokeSound();
-      setTimeout(function(){ $('.newPokeForm').find("input[type=text], textarea").val(""); }, 3000);
+      pokeSound(bulbasaur);
+      setTimeout(function(){ $('.newPokeForm').find("input[type=text], input[type=url], textarea").val(""); }, 3000);
     }, function errorCallback(response) {
       console.log('There was an error posting the data', response);
     });
@@ -114,6 +116,7 @@ function PokemonIndexController ($http, $scope) {
       data: poke
     }).then(function successCallback(json) {
       console.log("PUT!");
+      pokeSound(pikachu);
     }, function errorCallback(response) {
       console.log('There was an error editing the data', response);
     });
@@ -125,6 +128,7 @@ function PokemonIndexController ($http, $scope) {
       url: 'https://super-crud.herokuapp.com/pokemon/'+ poke._id
     }).then(function successCallback(json) {
       console.log("test");
+      pokeSound(charmander);
       var index = vm.pokemon.indexOf(poke);
       vm.pokemon.splice(index,1);
     }, function errorCallback(response) {
