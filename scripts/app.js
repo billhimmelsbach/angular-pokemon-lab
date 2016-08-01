@@ -39,6 +39,11 @@ PokemonIndexController.$inject = ['$http', '$scope'];
 // }
 function PokemonIndexController ($http, $scope) {
   var vm = this;
+  vm.newPoke = {};
+  // vm.newPoke = {
+  //   name: '',
+  //   artistName: 'Morrissey'
+  // };
 
   $http({
     method: 'GET',
@@ -67,6 +72,7 @@ function PokemonIndexController ($http, $scope) {
 
   vm.createPoke = function () {
     console.log("test");
+    console.log("newPoke");
     $http({
       method: 'POST',
       url: 'https://super-crud.herokuapp.com/pokemon/',
@@ -79,12 +85,13 @@ function PokemonIndexController ($http, $scope) {
   };
 
   vm.editPoke = function (poke) {
+    console.log(poke);
     $http({
       method: 'PUT',
       url: 'https://super-crud.herokuapp.com/pokemon/'+poke._id,
       data: poke
     }).then(function successCallback(json) {
-      // don't need to do anything!
+      console.log("PUT!");
     }, function errorCallback(response) {
       console.log('There was an error editing the data', response);
     });
@@ -95,6 +102,7 @@ function PokemonIndexController ($http, $scope) {
       method: 'DELETE',
       url: 'https://super-crud.herokuapp.com/pokemon/'+ poke._id
     }).then(function successCallback(json) {
+      console.log("test");
       var index = vm.pokemon.indexOf(poke);
       vm.pokemon.splice(index,1);
     }, function errorCallback(response) {

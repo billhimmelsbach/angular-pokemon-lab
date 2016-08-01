@@ -49,17 +49,34 @@
             <input type="text" class="hiddenPokeSelect form-control" ng-model="pokemonIndexCtrl.selectPokemon">
             <div ng-repeat="poke in pokemonIndexCtrl.pokemon | filter: pokemonIndexCtrl.selectPokemon">
                 <div class = "pokeNameContainer col-xs-10 col-xs-offset-1">
-                  <p class = "pokeNameText">{{poke.pokedex}} {{poke.name}}</p>
+                  <p class = "pokeNameText" ng-hide="editing">{{poke.pokedex}} {{poke.name}}</p>
+                  <input ng-show="editing" ng-model="poke.pokedex" type="text" class="form-control input-md">
+                  <input ng-show="creating" ng-model="newPoke.pokedex" type="text" class="form-control input-md">
+                  <input ng-show="editing" ng-model="poke.name" type="text" class="form-control input-md">
+                  <input ng-show="creating" ng-model="newPoke.name" type="text" class="form-control input-md">
                 </div>
                 <br>
                 <div class = "row">
                   <div class = "col-xs-10 col-xs-offset-1 middleRowContainer">
                       <div class = "imgContainer col-xs-4">
                         <img class = "img-responsive center-block" src='{{poke.image}}'>
+                        <input ng-show="editing" ng-model="poke.image" type="text" class="form-control input-md">
+                        <input ng-show="creating" ng-model="newPoke.image" type="text" class="form-control input-md">
                       </div>
                 <div class = "rightColumnMiddle col-xs-6 pull-right">
                   <div class = "pokeNameContainer pokeInfo">
-                    <p class = "pokeNameText"> Evolves From: {{poke.evolves_from}}</p>
+                    <p class = "pokeNameText"> Evolves From: <span ng-hide="editing"> {{poke.evolves_from}}</span></p>
+                    <input ng-show="editing" ng-model="poke.evolves_from" type="text" class="form-control input-md">
+                    <input ng-show="creating" ng-model="newPoke.evolves_from" type="text" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class ="col-xs-12">
+                  <button class='btn btn-info' ng-hide="creating" ng-click="creating = true">Create Pokemon!</button>
+                  <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Pokemon!</button>
+                  <button class='btn btn-success' ng-show="editing" ng-click="pokemonIndexCtrl.editPoke(poke); editing = false">Save Pokemon!</button>
+                  <button class='btn btn-success' ng-show="creating" ng-click="pokemonIndexCtrl.newPoke(poke); creating = false">Save Pokemon!</button>
+                  <button class='btn btn-danger' ng-click="pokemonIndexCtrl.deletePoke(poke)">Delete Pokemon!</button>
                   </div>
                 </div>
                 </div>
