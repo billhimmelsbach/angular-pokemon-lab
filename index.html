@@ -37,7 +37,7 @@
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
                 <div class = "pokeSide" ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
-                    <a href="" ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
+                    <a class = "pokeSide" href="" ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
                 </div>
 
     </div>

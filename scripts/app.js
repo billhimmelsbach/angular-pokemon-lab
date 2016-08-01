@@ -13,8 +13,10 @@
 
 $(document).ready(function() {
    console.log("test!");
-   $('body').on('click', 'a', function(e){
+   $('body').on('click', '.pokeSide', function(e){
      e.preventDefault();
+     $('div').removeClass('active');
+     $('div a').removeClass('active');
      console.log("hey!");
      $(this).addClass('active');
   });

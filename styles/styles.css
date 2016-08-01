@@ -47,18 +47,32 @@ body {
 a {
   color: white;
   font-size:5vh;
-
 }
-a:hover
-{
+
+a:hover {
   background-color: black;
   color:white;
 }
 
 a:active {
+  background-color: black;
+  color:white;
+}
+.pokeSide:hover {
+  background-color: black;
+  color:white;
+}
+
+.pokeSide:active {
     color: white;
     background-color: black;
 }
+
+.active {
+  color: white;
+  background-color: black;
+}
+
 /*::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
