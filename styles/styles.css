@@ -21,14 +21,27 @@
 
 .pokeNameContainer {
   text-align: center;
+  margin-top: 4%;
   vertical-align: middle;
   display: table-cell;
+  background-color:white;
+  border:2px solid #000000;
 }
 
+.img-thumbnail{
+  border:2px solid #000000;
+}
+.middleRowContainer{
+  margin-top: 5%;
+  margin-bottom:5%;
+  margin-left:5%;
+  margin-right:5%
+}
 .pokeNameText {
   vertical-align: middle;
   margin-top:2%;
   margin-bottom:2%;
+  color: black;
 }
 
 body {

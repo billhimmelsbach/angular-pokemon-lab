@@ -44,7 +44,6 @@
 
     </div>
       <div class="col-xs-9 pokePanel">
-        <br>
         <div class="row">
           <div class = "col-xs-12 offset-xs-2">
             <input type="text" class="hiddenPokeSelect form-control" ng-model="pokemonIndexCtrl.selectPokemon">
@@ -52,9 +51,15 @@
                 <div class = "pokeNameContainer col-xs-10 col-xs-offset-1">
                   <p class = "pokeNameText">{{poke.pokedex}} {{poke.name}}</p>
                 </div>
+                <br>
+                <div class = "row">
+                <div class = "col-xs-10 middleRowContainer">
+                <div class = "imgContainer">
                 <img class = "img-responsive img-thumbnail" src='{{poke.image}}'>
+                </div>
                 <p>{{poke.evolves_from}}
-
+                </div>
+                </div>
             </div>
           </div>
         </div>
