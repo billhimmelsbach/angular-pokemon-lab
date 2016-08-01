@@ -5,6 +5,14 @@
 //      console.log("hey!");
 //      $(this).addClass('active');
 //   });
+var music1 = new Audio("sound/opening.mp3");
+var poke1 = new Audio("sound/bulbasaur.mp3");
+function pokeSound() {
+  console.log("Sounds!");
+  music1.pause();
+  poke1.play();
+  music1.play();
+}
 
 
 $(document).ready(function() {
@@ -15,7 +23,21 @@ $(document).ready(function() {
      $('div a').removeClass('active');
      console.log("hey!");
      $(this).addClass('active');
+
   });
+
+  music1.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+  music1.play();
+
+  // var snd1  = new Audio();
+  // var src1  = document.createElement("source");
+  // src1.type = "sound/mp3";
+  // src1.src  = "sound/opening.mp3";
+  // snd1.appendChild(src1);
+  // snd1.play();
  //  $('body').on('click', '.savePokemon', function(e){
  //    console.log("test!");
  //    $('#myModal').modal('toggle');
@@ -77,6 +99,7 @@ function PokemonIndexController ($http, $scope) {
     }).then(function successCallback(response) {
       vm.pokemon.push(response.data);
       $('#myModal').modal('toggle');
+      pokeSound();
       setTimeout(function(){ $('.newPokeForm').find("input[type=text], textarea").val(""); }, 3000);
     }, function errorCallback(response) {
       console.log('There was an error posting the data', response);

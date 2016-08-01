@@ -13,10 +13,12 @@
 #savePokemonButton {
   right:+50% !important;
 }
+
 .btn-lg {
   border-radius:0 !important;
   color: black;
   font-size: 3vh;
+  border: 1px solid black
 }
 html, body {height:100%;}
 html {display:table; width:100%;}
