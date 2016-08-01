@@ -17,8 +17,18 @@
   background-color: #dd0623;
   height:80vh;
   padding-left: 0;
+}
 
+.pokeNameContainer {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
 
+.pokeNameText {
+  vertical-align: middle;
+  margin-top:2%;
+  margin-bottom:2%;
 }
 
 body {
@@ -47,6 +57,11 @@ body {
 a {
   color: white;
   font-size:5vh;
+}
+
+a:visited {
+  background-color: black;
+  color:white;
 }
 
 a:hover {

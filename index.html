@@ -27,7 +27,7 @@
     <!-- <br> -->
     <div class="content col-xs-10 offset-xs-2">
     <div class="row">
-    <div class="col-xs-2 title">
+    <div class="col-xs-3 title">
         <p>Pokedex</p>
           <div class="search">
             <input type="text" class="form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
@@ -36,8 +36,10 @@
     </div>
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
-                <div class = "pokeSide" ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
-                    <a class = "pokeSide" href="" ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
+                <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
+                    <div class="pokeSide" ng-click="pokemonIndexCtrl.changePoke(poke)">
+                    <a href="" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
+                    </div>
                 </div>
 
     </div>
@@ -45,10 +47,14 @@
         <br>
         <div class="row">
           <div class = "col-xs-12 offset-xs-2">
-          <p>test test</p>
             <input type="text" class="hiddenPokeSelect form-control" ng-model="pokemonIndexCtrl.selectPokemon">
             <div ng-repeat="poke in pokemonIndexCtrl.pokemon | filter: pokemonIndexCtrl.selectPokemon">
-                <p class='inline-header'>{{poke.name}}</p>
+                <div class = "pokeNameContainer col-xs-10 col-xs-offset-1">
+                  <p class = "pokeNameText">{{poke.pokedex}} {{poke.name}}</p>
+                </div>
+                <img class = "img-responsive img-thumbnail" src='{{poke.image}}'>
+                <p>{{poke.evolves_from}}
+
             </div>
           </div>
         </div>
