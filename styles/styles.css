@@ -95,9 +95,9 @@ body {display:table-cell; text-align:center; vertical-align:middle;}
 
 }
 
-.searchBar{
+/*.searchBar{
 
-}
+}*/
 
 body {
   height:100%;
@@ -190,8 +190,8 @@ ul {
   margin-right: 0;
 }
 
-.searchContainerParent {
-}
+/*.searchContainerParent {
+}*/
 
 .row.no-gutter [class*='col-']:not(:first-child),
 .row.no-gutter [class*='col-']:not(:last-child) {

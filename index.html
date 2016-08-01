@@ -89,17 +89,9 @@
     <div class="row">
     <div class="col-xs-3 title">
         <p>Pokedex</p>
+        <input type="text" class="searchBar form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
       </div>
-      </div>
-      <div class="row no-gutter searchContainer">
-        <div class="col-xs-3 searchBorder pull-left">
-          <div class="search col-xs-12 pull-left">
-            <div class="searchContainer col-xs-10 col-xs-offset-1">
-            <input type="text" class="searchBar form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
                 <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
