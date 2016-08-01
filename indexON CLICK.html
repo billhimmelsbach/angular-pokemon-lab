@@ -23,7 +23,6 @@
 
 </head>
   <body>
-    <div class="container pokeContainer" ng-controller="PokemonIndexController as pokemonIndexCtrl">
     <!-- <br> -->
     <div class="content col-xs-10 offset-xs-2">
     <div class="row">
@@ -36,20 +35,23 @@
     </div>
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
+              <div class="container pokeContainer" ng-controller="PokemonIndexController as pokemonIndexCtrl">
                 <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
-                    <p ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
+                    <p ng-click="changePoke($index)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
                 </div>
-
-    </div>
+              </div>
+      </div>
       <div class="col-xs-9 pokePanel">
         <br>
         <div class="row">
           <div class = "col-xs-12 offset-xs-2">
           <p>test test</p>
-            <input type="text" class="hiddenPokeSelect form-control" ng-model="pokemonIndexCtrl.selectPokemon">
-            <div ng-repeat="poke in pokemonIndexCtrl.pokemon | filter: pokemonIndexCtrl.selectPokemon">
+          <div class="container" ng-controller="PokemonIndexController as pokemonIndexCtrl">
+            <input type="text" class="hiddenPokeSelect form-control" ng-model="selectPokemon">
+            <div ng-repeat="poke in pokemonIndexCtrl.pokemon | filter: selectPokemon">
                 <p class='inline-header'>{{poke.name}}</p>
             </div>
+          </div>
           </div>
         </div>
 
@@ -57,8 +59,6 @@
       <div>
     </div>
   </div>
-</div>
-</div>
   </body>
 
 </html>

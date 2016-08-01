@@ -7,16 +7,20 @@
 angular
   .module('pokemon', [])
   .controller('PokemonIndexController', PokemonIndexController);
+//   .controller('SelectPokemonController', SelectPokemonController);
+//
+// function SelectPokemonController($scope) {
+//   function Main($scope) {
+//   $scope.rootFolders = 'bob';
+// }
 
-PokemonIndexController.$inject = ['$http'];
+PokemonIndexController.$inject = ['$http', '$scope'];
 
-function PokemonIndexController ($http) {
+// function PokemonIndexController($scope) {
+//   $scope.selectPokemon = 'bob';
+// }
+function PokemonIndexController ($http, $scope) {
   var vm = this;
-  // vm.newAlbum = {};
-  // vm.newAlbum = {
-  //   name: 'Viva Hate',
-  //   artistName: 'Morrissey'
-  // };
 
   $http({
     method: 'GET',
@@ -24,12 +28,24 @@ function PokemonIndexController ($http) {
   }).then(function successCallback(response) {
     vm.pokemon = response.data.pokemon;
     console.log(response.data);
-    console.log(vm.albums);
-    // console.log(vm.albums.pokemon);
-    // console.log(vm.albums.pokemon[0].name);
+    vm.selectPokemon = vm.pokemon[0].name;
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
+
+
+  // $scope.selectPokemon = 'Venusaur';
+
+  vm.changePoke = function(poke) {
+    console.log(poke);
+    console.log("Clicked!");
+    console.log(poke.name);
+    vm.selectPokemon = poke._id;
+    console.log(vm.selectPokemon);
+    // console.log(vm.pokemon[$index].name);
+    // $scope.selectPokemon = vm.pokemon[$index].name;
+  };
+
 
   vm.createPoke = function () {
     console.log("test");
