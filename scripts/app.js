@@ -3,6 +3,22 @@
  * This is your main angular file. Edit as you see fit.
  *
  */
+//  window.onload = function() {
+//    console.log("test!");
+//    $('.pokeSide').on('click', function(){
+//      console.log("hey!");
+//      $(this).addClass('active');
+//   });
+
+
+$(document).ready(function() {
+   console.log("test!");
+   $('body').on('click', 'a', function(e){
+     e.preventDefault();
+     console.log("hey!");
+     $(this).addClass('active');
+  });
+});
 
 angular
   .module('pokemon', [])

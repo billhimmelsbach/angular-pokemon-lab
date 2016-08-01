@@ -9,10 +9,16 @@
   /*margin-left: .5vh;*/
 }
 
+.title {
+  font-size: 6vh;
+}
+
 .pokePanel {
   background-color: #dd0623;
   height:80vh;
   padding-left: 0;
+
+
 }
 
 body {
@@ -34,9 +40,25 @@ body {
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-/*.hiddenPokeSelect {
+.hiddenPokeSelect {
   display:none;
-}*/
+}
+
+a {
+  color: white;
+  font-size:5vh;
+
+}
+a:hover
+{
+  background-color: black;
+  color:white;
+}
+
+a:active {
+    color: white;
+    background-color: black;
+}
 /*::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
@@ -75,6 +97,7 @@ ul {
   height:80vh;
   background-color: #dd0623;
   overflow-y: auto;
+  overflow-x: hidden;
 
 }
 

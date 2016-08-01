@@ -28,7 +28,7 @@
     <div class="content col-xs-10 offset-xs-2">
     <div class="row">
     <div class="col-xs-2 title">
-        <h3>Pokedex</h1>
+        <p>Pokedex</p>
           <div class="search">
             <input type="text" class="form-control" ng-model="searchPokemon" placeholder="Search Pokemon">
           </div>
@@ -36,8 +36,8 @@
     </div>
     <div class ="row no-gutter">
     <div class="col-xs-3 sideBar">
-                <div ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
-                    <p ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
+                <div class = "pokeSide" ng-repeat="poke in pokemonIndexCtrl.pokemon | orderBy: 'pokedex' | filter: searchPokemon">
+                    <a href="" ng-click="pokemonIndexCtrl.changePoke(poke)" value="{{poke.name}}" class='inline-header'>{{poke.pokedex}}-{{poke.name}}</p>
                 </div>
 
     </div>
